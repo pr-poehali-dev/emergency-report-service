@@ -215,8 +215,8 @@ export default function Index() {
                 </div>
                 <div>
                   <div className="font-semibold mb-1">Email</div>
-                  <a href="mailto:info@avkomissar.ru" className="text-primary hover:underline">
-                    info@avkomissar.ru
+                  <a href="mailto:gorod-dorog.tlt@yandex.ru" className="text-primary hover:underline">
+                    gorod-dorog.tlt@yandex.ru
                   </a>
                 </div>
               </div>
