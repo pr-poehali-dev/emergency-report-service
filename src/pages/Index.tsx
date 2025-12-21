@@ -226,7 +226,7 @@ export default function Index() {
                 </div>
                 <div>
                   <div className="font-semibold mb-1">Адрес</div>
-                  <p className="text-muted-foreground">г. Москва, ул. Примерная, д. 123</p>
+                  <p className="text-muted-foreground">г. Тольятти, ул. Герцена, д. 62, оф. 409</p>
                 </div>
               </div>
             </div>
