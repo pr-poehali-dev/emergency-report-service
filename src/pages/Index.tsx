@@ -63,9 +63,9 @@ export default function Index() {
             <Icon name="ShieldCheck" size={32} className="text-secondary" />
             <h1 className="text-2xl font-bold">Аварийный Комиссар</h1>
           </div>
-          <a href="tel:+79991234567" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+          <a href="tel:+79879399112" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
             <Icon name="Phone" size={20} />
-            <span className="font-semibold text-lg">+7 (999) 123-45-67</span>
+            <span className="font-semibold text-lg">+7 987-93-99-112</span>
           </a>
         </div>
       </header>
@@ -204,8 +204,8 @@ export default function Index() {
                 </div>
                 <div>
                   <div className="font-semibold mb-1">Телефон 24/7</div>
-                  <a href="tel:+79991234567" className="text-lg text-primary hover:underline">
-                    +7 (999) 123-45-67
+                  <a href="tel:+79879399112" className="text-lg text-primary hover:underline">
+                    +7 987-93-99-112
                   </a>
                 </div>
               </div>
