@@ -89,10 +89,10 @@ export default function Index() {
                 Вызвать комиссара
               </a>
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-6 bg-green-600 text-white hover:bg-green-700 border-green-600" asChild>
-              <a href="https://wa.me/79879399112" target="_blank" rel="noopener noreferrer">
-                <Icon name="MessageCircle" size={24} className="mr-2" />
-                WhatsApp
+            <Button size="lg" variant="outline" className="text-lg px-8 py-6 bg-[#0088cc] text-white hover:bg-[#006ba3] border-[#0088cc]" asChild>
+              <a href="https://t.me/79879399112" target="_blank" rel="noopener noreferrer">
+                <Icon name="Send" size={24} className="mr-2" />
+                Telegram
               </a>
             </Button>
           </div>
