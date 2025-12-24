@@ -89,10 +89,10 @@ export default function Index() {
                 Вызвать комиссара
               </a>
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-6" asChild>
-              <a href="tel:+79879399112">
+            <Button size="lg" variant="outline" className="text-lg px-8 py-6 bg-green-600 text-white hover:bg-green-700 border-green-600" asChild>
+              <a href="https://wa.me/79879399112" target="_blank" rel="noopener noreferrer">
                 <Icon name="MessageCircle" size={24} className="mr-2" />
-                Консультация
+                WhatsApp
               </a>
             </Button>
           </div>
@@ -290,6 +290,16 @@ export default function Index() {
           </div>
         </div>
       </footer>
+
+      <a
+        href="https://wa.me/79879399112"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-2xl transition-all hover:scale-110 z-50 flex items-center justify-center"
+        aria-label="Написать в WhatsApp"
+      >
+        <Icon name="MessageCircle" size={32} />
+      </a>
     </div>
   );
 }
