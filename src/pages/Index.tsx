@@ -105,53 +105,27 @@ export default function Index() {
           <p className="text-lg text-muted-foreground">Среднее время прибытия комиссара по районам города</p>
         </div>
         <Card className="p-8 max-w-5xl mx-auto shadow-xl">
-          <div className="relative aspect-square max-w-2xl mx-auto bg-muted/30 rounded-2xl overflow-hidden">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="relative w-full h-full">
-                {zones.map((zone, index) => {
-                  const angle = (index * 360) / zones.length;
-                  const radius = 35;
-                  const x = 50 + radius * Math.cos((angle * Math.PI) / 180);
-                  const y = 50 + radius * Math.sin((angle * Math.PI) / 180);
-                  
-                  return (
-                    <div
-                      key={zone.name}
-                      className="absolute transform -translate-x-1/2 -translate-y-1/2 animate-fade-in"
-                      style={{
-                        left: `${x}%`,
-                        top: `${y}%`,
-                        animationDelay: `${index * 0.1}s`,
-                      }}
-                    >
-                      <div 
-                        className="bg-white rounded-xl shadow-lg p-4 min-w-[140px] border-2 hover:scale-110 transition-transform cursor-pointer"
-                        style={{ borderColor: zone.color }}
-                      >
-                        <div className="flex items-center gap-2 mb-2">
-                          <div 
-                            className="w-3 h-3 rounded-full" 
-                            style={{ backgroundColor: zone.color }}
-                          />
-                          <h4 className="font-bold text-foreground">{zone.name}</h4>
-                        </div>
-                        <div className="flex items-center gap-1 text-sm text-muted-foreground">
-                          <Icon name="Clock" size={14} />
-                          <span>{zone.time}</span>
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })}
-                
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                  <div className="bg-primary text-primary-foreground rounded-2xl shadow-2xl p-6 animate-slide-up">
-                    <Icon name="MapPin" size={32} className="mx-auto mb-2" />
-                    <div className="font-bold text-lg">Центр города</div>
-                    <div className="text-sm opacity-90">Главный офис</div>
-                  </div>
-                </div>
+          <div className="relative aspect-video w-full bg-muted/30 rounded-2xl overflow-hidden">
+            <iframe
+              src="https://yandex.ru/map-widget/v1/?um=constructor%3A8c4c3e8f8a8b8c8d8e8f8a8b8c8d8e8f&amp;source=constructor"
+              width="100%"
+              height="100%"
+              frameBorder="0"
+              className="rounded-2xl"
+              title="Карта Тольятти с офисом"
+            ></iframe>
+            <div className="absolute bottom-4 left-4 bg-white rounded-xl shadow-lg p-4 max-w-xs">
+              <div className="flex items-center gap-2 mb-2">
+                <Icon name="MapPin" size={20} className="text-primary" />
+                <div className="font-bold">Наш офис</div>
               </div>
+              <p className="text-sm text-muted-foreground">г. Тольятти, ул. Герцена, д. 62, оф. 409</p>
+              <Button size="sm" className="mt-3 w-full" asChild>
+                <a href="https://yandex.ru/maps/?rtext=~53.5303,49.3461" target="_blank" rel="noopener noreferrer">
+                  <Icon name="Navigation" size={16} className="mr-2" />
+                  Построить маршрут
+                </a>
+              </Button>
             </div>
           </div>
           <div className="mt-8 grid grid-cols-2 md:grid-cols-5 gap-4">
