@@ -83,13 +83,17 @@ export default function Index() {
             Профессиональная помощь аварийного комиссара. Оформим все документы, проведем экспертизу и поможем получить страховые выплаты.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8 py-6 bg-secondary hover:bg-secondary/90">
-              <Icon name="PhoneCall" size={24} className="mr-2" />
-              Вызвать комиссара
+            <Button size="lg" className="text-lg px-8 py-6 bg-secondary hover:bg-secondary/90" asChild>
+              <a href="tel:+79879399112">
+                <Icon name="PhoneCall" size={24} className="mr-2" />
+                Вызвать комиссара
+              </a>
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-6">
-              <Icon name="MessageCircle" size={24} className="mr-2" />
-              Консультация
+            <Button size="lg" variant="outline" className="text-lg px-8 py-6" asChild>
+              <a href="tel:+79879399112">
+                <Icon name="MessageCircle" size={24} className="mr-2" />
+                Консультация
+              </a>
             </Button>
           </div>
         </div>
