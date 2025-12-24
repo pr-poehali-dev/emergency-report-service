@@ -238,9 +238,13 @@ export default function Index() {
                 </div>
                 <div>
                   <div className="font-semibold mb-1">Телефон 24/7</div>
-                  <a href="tel:+79879399112" className="text-lg text-primary hover:underline">
+                  <a href="tel:+79879399112" className="text-lg text-primary hover:underline block">
                     +7 987-93-99-112
                   </a>
+                  <a href="tel:+79879692112" className="text-lg text-primary hover:underline block mt-1">
+                    +7 987-96-92-112
+                  </a>
+                  <p className="text-sm text-muted-foreground mt-1">Офис</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
