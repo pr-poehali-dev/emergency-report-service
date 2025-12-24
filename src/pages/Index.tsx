@@ -151,6 +151,56 @@ export default function Index() {
         </Card>
       </section>
 
+      <section id="cases" className="container mx-auto px-4 py-16">
+        <div className="text-center mb-12">
+          <h3 className="text-4xl font-bold mb-4">Как мы помогли</h3>
+          <p className="text-lg text-muted-foreground">Реальные истории наших клиентов</p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <Card className="p-6 hover:shadow-xl transition-all">
+            <div className="bg-green-500/10 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+              <Icon name="CheckCircle2" size={24} className="text-green-600" />
+            </div>
+            <h4 className="text-xl font-bold mb-3">ДТП в Центре</h4>
+            <p className="text-muted-foreground mb-4">
+              Столкновение на перекрестке Татищева. Оформили европротокол за 40 минут, клиент получил выплату 180 000 ₽.
+            </p>
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <Icon name="Clock" size={16} />
+              <span>Приехали за 12 минут</span>
+            </div>
+          </Card>
+
+          <Card className="p-6 hover:shadow-xl transition-all">
+            <div className="bg-blue-500/10 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+              <Icon name="CheckCircle2" size={24} className="text-blue-600" />
+            </div>
+            <h4 className="text-xl font-bold mb-3">Спорная ситуация</h4>
+            <p className="text-muted-foreground mb-4">
+              Авария на Южном шоссе. Провели независимую экспертизу, доказали невиновность клиента. Выплата 320 000 ₽.
+            </p>
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <Icon name="Clock" size={16} />
+              <span>Приехали за 18 минут</span>
+            </div>
+          </Card>
+
+          <Card className="p-6 hover:shadow-xl transition-all">
+            <div className="bg-orange-500/10 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+              <Icon name="CheckCircle2" size={24} className="text-orange-600" />
+            </div>
+            <h4 className="text-xl font-bold mb-3">Ночное ДТП</h4>
+            <p className="text-muted-foreground mb-4">
+              Авария в 3 часа ночи на Автозаводском районе. Полное сопровождение, все документы для ГИБДД. Выплата 245 000 ₽.
+            </p>
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <Icon name="Clock" size={16} />
+              <span>Приехали за 22 минуты</span>
+            </div>
+          </Card>
+        </div>
+      </section>
+
       <section id="services" className="container mx-auto px-4 py-16 bg-muted/30">
         <div className="text-center mb-12">
           <h3 className="text-4xl font-bold mb-4">Наши услуги</h3>
