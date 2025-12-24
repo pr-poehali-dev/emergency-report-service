@@ -72,9 +72,15 @@ export default function Index() {
 
       <section className="container mx-auto px-4 py-20 text-center animate-fade-in">
         <div className="max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 bg-secondary/10 text-secondary px-4 py-2 rounded-full mb-6">
-            <Icon name="Clock" size={20} />
-            <span className="font-semibold">Работаем 24/7</span>
+          <div className="flex items-center justify-center gap-4 mb-6 flex-wrap">
+            <div className="inline-flex items-center gap-2 bg-secondary/10 text-secondary px-4 py-2 rounded-full">
+              <Icon name="Clock" size={20} />
+              <span className="font-semibold">Работаем 24/7</span>
+            </div>
+            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full">
+              <Icon name="Award" size={20} />
+              <span className="font-semibold">На рынке 7+ лет</span>
+            </div>
           </div>
           <h2 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
             Приедем на место ДТП<br />за <span className="text-secondary">15 минут</span>
