@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -48,11 +48,27 @@ const zones = [
 
 export default function Index() {
   const [formData, setFormData] = useState({ name: '', phone: '', message: '' });
+  const [showCallbackPopup, setShowCallbackPopup] = useState(false);
+  const [callbackPhone, setCallbackPhone] = useState('');
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowCallbackPopup(true);
+    }, 15000);
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     alert('Спасибо! Мы свяжемся с вами в ближайшее время.');
     setFormData({ name: '', phone: '', message: '' });
+  };
+
+  const handleCallbackSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    alert(`Спасибо! Перезвоним вам на номер ${callbackPhone} в течение 2 минут.`);
+    setShowCallbackPopup(false);
+    setCallbackPhone('');
   };
 
   return (
@@ -342,6 +358,48 @@ export default function Index() {
       >
         <Icon name="Send" size={28} />
       </a>
+
+      {showCallbackPopup && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-[100] p-4 animate-fade-in">
+          <Card className="max-w-md w-full p-8 relative animate-slide-up">
+            <button
+              onClick={() => setShowCallbackPopup(false)}
+              className="absolute top-4 right-4 text-muted-foreground hover:text-foreground transition-colors"
+              aria-label="Закрыть"
+            >
+              <Icon name="X" size={24} />
+            </button>
+            
+            <div className="text-center mb-6">
+              <div className="bg-secondary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Icon name="PhoneCall" size={32} className="text-secondary" />
+              </div>
+              <h3 className="text-2xl font-bold mb-2">Перезвоним за 2 минуты!</h3>
+              <p className="text-muted-foreground">Оставьте номер телефона, и мы сразу перезвоним</p>
+            </div>
+
+            <form onSubmit={handleCallbackSubmit} className="space-y-4">
+              <Input
+                type="tel"
+                placeholder="+7 (___) ___-__-__"
+                value={callbackPhone}
+                onChange={(e) => setCallbackPhone(e.target.value)}
+                required
+                className="h-12 text-lg"
+                autoFocus
+              />
+              <Button type="submit" className="w-full h-12 text-lg bg-secondary hover:bg-secondary/90">
+                <Icon name="PhoneCall" size={20} className="mr-2" />
+                Жду звонка!
+              </Button>
+            </form>
+
+            <p className="text-xs text-center text-muted-foreground mt-4">
+              Работаем круглосуточно. Конфиденциальность гарантирована.
+            </p>
+          </Card>
+        </div>
+      )}
     </div>
   );
 }
