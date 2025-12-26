@@ -112,7 +112,7 @@ export default function Index() {
               </a>
             </Button>
             <Button size="lg" variant="outline" className="text-lg px-8 py-6 bg-[#0088cc] text-white hover:bg-[#006ba3] border-[#0088cc]" asChild>
-              <a href="https://t.me/79879399112" target="_blank" rel="noopener noreferrer">
+              <a href="https://t.me/+79879399112" target="_blank" rel="noopener noreferrer">
                 <Icon name="Send" size={24} className="mr-2" />
                 Telegram
               </a>
@@ -350,7 +350,7 @@ export default function Index() {
       </a>
       
       <a
-        href="https://t.me/79879399112"
+        href="https://t.me/+79879399112"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-24 bg-[#0088cc] hover:bg-[#006ba3] text-white rounded-full p-4 shadow-2xl transition-all hover:scale-110 z-50 flex items-center justify-center"
