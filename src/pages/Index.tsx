@@ -64,11 +64,31 @@ export default function Index() {
     setFormData({ name: '', phone: '', message: '' });
   };
 
-  const handleCallbackSubmit = (e: React.FormEvent) => {
+  const handleCallbackSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert(`Спасибо! Перезвоним вам на номер ${callbackPhone} в течение 2 минут.`);
-    setShowCallbackPopup(false);
-    setCallbackPhone('');
+    
+    try {
+      const response = await fetch('https://functions.poehali.dev/03815e7b-7475-46f4-b73b-4bc8422634d9', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ phone: callbackPhone }),
+      });
+      
+      const data = await response.json();
+      
+      if (response.ok && data.success) {
+        alert(`Спасибо! Перезвоним вам на номер ${callbackPhone} в течение 2 минут.`);
+        setShowCallbackPopup(false);
+        setCallbackPhone('');
+      } else {
+        alert('Произошла ошибка. Пожалуйста, позвоните нам напрямую.');
+      }
+    } catch (error) {
+      console.error('Error sending callback request:', error);
+      alert('Произошла ошибка. Пожалуйста, позвоните нам напрямую.');
+    }
   };
 
   return (

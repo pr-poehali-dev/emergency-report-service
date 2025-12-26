@@ -1,0 +1,28 @@
+{
+  "tests": [
+    {
+      "name": "Test successful message send",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "phone": "+7 (987) 939-91-12"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Test missing phone number",
+      "method": "POST",
+      "path": "/",
+      "body": {},
+      "expectedStatus": 400,
+      "expectedBody": {
+        "error": "Phone number required"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
